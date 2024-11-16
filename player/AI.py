@@ -251,29 +251,29 @@ class AI:
 
 
     def calculateb(self,gametiles):
-    piece_values = {
+        piece_values = {
             'P': -100, 'N': -320, 'B': -330, 'R': -500,
             'Q': -900, 'K': -20000,
             'p': 100, 'n': 320, 'b': 330, 'r': 500,
             'q': 900, 'k': 20000
             }
-    value = 0
-    for y in range(8):
-        for x in range(8):
-            piece_str = gametiles[y][x].pieceonTile.tostring()
-            piece_value = piece_values.get(piece_str, 0)
-            value += piece_value
-            if piece_str in ['K', 'k']:
-                if x in [0, 1, 6, 7] or y in [0, 1, 6, 7]:
-                    value -= 100 if piece_str == 'K' else 100
-                else:
-                    value += 50 if piece_str == 'K' else -50
-            if piece_str in ['Q', 'q', 'R', 'r', 'B', 'b', 'N', 'n']:
-                value += len(gametiles[y][x].pieceonTile.legalMoves()) * (10 if piece_str.islower() else -10)
-            if piece_str in ['P', 'p']:
-                if x in [2, 3, 4, 5]:
-                    value += 10 if piece_str == 'p' else -10
-    return value
+        value = 0
+        for y in range(8):
+            for x in range(8):
+                piece_str = gametiles[y][x].pieceonTile.tostring()
+                piece_value = piece_values.get(piece_str, 0)
+                value += piece_value
+                if piece_str in ['K', 'k']:
+                    if x in [0, 1, 6, 7] or y in [0, 1, 6, 7]:
+                        value -= 100 if piece_str == 'K' else 100
+                    else:
+                        value += 50 if piece_str == 'K' else -50
+                    if piece_str in ['Q', 'q', 'R', 'r', 'B', 'b', 'N', 'n']:
+                        value += len(gametiles[y][x].pieceonTile.legalMoves()) * (10 if piece_str.islower() else -10)
+                    if piece_str in ['P', 'p']:
+                        if x in [2, 3, 4, 5]:
+                            value += 10 if piece_str == 'p' else -10
+        return value
 
     def move(self,gametiles,y,x,n,m):
         promotion=False
