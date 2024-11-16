@@ -26,17 +26,7 @@ Inorder to model a chessboard within a data structure a 2D array was used with t
 
 5.  **Playchess.py**: Main file of the program which merges all the functionality from the other files and itself as well to implement all this on pygame GUI.
       
-5. **Screen**:
-Game Screen
 
-    1. Main Screen: 
-    ![index page](https://raw.githubusercontent.com/ahmadrazakhawaja/chess-game-AI-project/master/project_images/Screenshot%202021-03-04%20at%206.16.22%20PM.png)<br/><br/>
-    2. Starting position:
-    ![index page](https://raw.githubusercontent.com/ahmadrazakhawaja/chess-game-AI-project/master/project_images/Screenshot%202021-03-04%20at%2010.02.30%20PM.png)<br/><br/>
-    4. The GUI guiding player which moves he can play after he clicked on his left white knight:
-    ![index page](https://raw.githubusercontent.com/ahmadrazakhawaja/chess-game-AI-project/master/project_images/Screenshot%202021-03-04%20at%2010.04.24%20PM.png)<br/><br/>
-    5. Game End screen:
-    ![index page](https://raw.githubusercontent.com/ahmadrazakhawaja/chess-game-AI-project/master/project_images/Screenshot%202021-03-04%20at%2010.08.36%20PM.png)<br/><br/>
 
 ## Improvements
 The AI for the game could certainly be improved. An average chess player can easily beat the AI because the AI sometimes make a blunder move , the reason could be because of the evaluation function and the shallow depth of the possibilities explored by the algorithm. The evaluation function could be improved to also take into consideration the position of the chess pieces on the board along with value of the chess pieces. We can train a deep learning model and deploy it into the game if we have enough data.
